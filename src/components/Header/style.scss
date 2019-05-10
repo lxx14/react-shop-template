@@ -8,16 +8,18 @@
   font-size: 20px;
   background-color: black;
   li {
-    padding: 20px;
     transition: 0.2s;
-    &:hover, &active {
+    &:hover, & .active {
       background-color: white;
+      color: black;
       a {
         color: black;
       }
     }
     a {
+      display: block;
       color: white;
+      padding: 20px;
     }
   }
 }
