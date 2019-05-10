@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
-import { itemsList } from './service';
 import './style.scss';
 
 class MainPageItems extends Component {
-    componentDidMount() {
-    const items = itemsList();
-  }
 
   render() {
     return(
