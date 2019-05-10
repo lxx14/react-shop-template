@@ -1,15 +1,18 @@
-.back {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  .fa-arrow-alt-circle-left {
-    font-size: 50px;
-    color: black;
-    &:hover {
-      text-shadow: 2px 2px 2px black;
-    }
-    &:active {
-      text-shadow: none;
+.single-item-page {
+  flex-direction: column;
+  .back {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    .fa-arrow-alt-circle-left {
+      font-size: 50px;
+      color: black;
+      &:hover {
+        text-shadow: 2px 2px 2px black;
+      }
+      &:active {
+        text-shadow: none;
+      }
     }
   }
 }
