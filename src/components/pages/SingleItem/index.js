@@ -12,6 +12,10 @@ const SingleItem = (props) => {
       <p>{stocked ? 'STOCKED' : 'NOT STOCKED'}</p>
       <img src={icon.src} alt={name} />
       <NavLink to='/items' className='back'><i className="far fa-arrow-alt-circle-left"></i></NavLink>
+      <div className='handlers'>
+      <i className="fas fa-star"></i>
+      <i className="fas fa-shopping-cart"></i>
+      </div>
     </div>
   )
 }
@@ -20,7 +24,6 @@ const SingleItem = (props) => {
 const mapStateToProps = (state, ownProps) => {
   const singleId = ownProps.match.params.id;
   const oneItem = state.itemsContainer.items.find( item => parseFloat(singleId) === item.id);
-  console.log(oneItem);
   return {
     oneItem
   }

@@ -1,5 +1,12 @@
 .single-item-page {
   flex-direction: column;
+  overflow: hidden;
+  text-align: center;
+  img {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto 30px;
+  }
   .back {
     position: absolute;
     bottom: 10px;
@@ -12,6 +19,21 @@
       }
       &:active {
         text-shadow: none;
+      }
+    }
+  }
+  .handlers {
+    margin: 0 0 30px 0;
+    .fas {
+      font-size: 40px;
+      margin: 0 10px;
+      cursor: pointer;
+      transition: 0.2s;
+      &:hover {
+        transform: scale(1.1);
+      }
+      &:active {
+        transform: scale(1);
       }
     }
   }
