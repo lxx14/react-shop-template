@@ -1,0 +1,29 @@
+.img-wrap {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 10px 20px;
+  display: flex;
+  justify-content: center;
+  a {
+    top: 30%;
+    position: absolute;
+    z-index: -1;
+    font-weight: bold;
+    color: rgb(0, 247, 255);
+    text-shadow: 0 0 2px black;
+  }
+  img {
+    width: 100%;
+  }
+  &:hover {
+    box-shadow: 0 0 5px 0 rgb(32, 32, 32);
+    background-color: gray;
+    img {
+      opacity: 0.5;
+    }
+    a {
+      z-index: 1;
+    }
+  }
+}
