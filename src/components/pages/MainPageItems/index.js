@@ -7,12 +7,18 @@ class MainPageItems extends Component {
   constructor(props) {
     super(props)
   }
-  
+
   render() {
-    const renderItems = this.props.items.map(item=><div key={item.id} className='img-wrap'><NavLink to={`/singleItem/${item.id}`}>Go to item</NavLink><img src={item.icon.src} /></div>)
-    return(
+    const renderItems = this.props.items.map(item => <div key={item.id} className='img-wrap'><NavLink to={`/singleItem/${item.id}`}>Go to item</NavLink><img src={item.icon.src} /></div>)
+    return (
       <div className='page'>
-        {renderItems}
+        <div>
+          <input type='text' />
+          <button type='button'>Find item</button>
+        </div>
+        <div className='items'>
+          {renderItems}
+        </div>
       </div>
     )
   }
