@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import './style.scss';
 
 const Header = (props) => {
-  return(
+  return (
     <div className='header'>
       <ul className='navi'>
         <li><NavLink exact to='/'><i className="fas fa-desktop"></i>About Us</NavLink></li>

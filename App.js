@@ -12,12 +12,12 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-      <div className='container'>
-        <Header />
-        <Router />
-        <Sidebar />
-        <Footer />
-      </div>
+        <div className='container'>
+          <Header />
+          <Router />
+          <Sidebar />
+          <Footer />
+        </div>
       </BrowserRouter>
     );
   }

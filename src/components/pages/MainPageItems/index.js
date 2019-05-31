@@ -26,7 +26,7 @@ class MainPageItems extends Component {
     return (
       <div className='page'>
         <div>
-          <input type='text' onChange={this.onChangeHandler} placeholder="fast example: ball"/>
+          <input type='text' onChange={this.onChangeHandler} placeholder="fast example: ball" />
           <button type='button' onClick={this.handleFind}>Find item</button>
         </div>
         <div className='items'>
@@ -38,7 +38,7 @@ class MainPageItems extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  items: state.itemsContainer.items.filter(item=>item.name.toLowerCase().includes(state.itemsContainer.searchString))
+  items: state.itemsContainer.items.filter(item => item.name.toLowerCase().includes(state.itemsContainer.searchString))
 })
 
 const mapDispatchToProps = {

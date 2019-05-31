@@ -6,7 +6,6 @@ import './style.scss';
 const Cart = (props) => {
   const deleteFromCart = (e) => {
     props.deleteCart(e.target.id);
-    console.log(e.target.id)
   }
 
   const cartRender = props.cart.map(item => <div className="cart-item" key={item.id}><div><img src={item.icon.src} alt={item.name} /><p><button className="button-ok" type="button" onClick={() => alert('Thanks for purchase! :)')}>confirm</button><button type="button" className="button-delete" onClick={deleteFromCart} id={item.id}>delete</button></p></div><p className="price">{item.price}</p></div>)

@@ -12,7 +12,7 @@ export default function (state = initialState, action) {
     case "DELETE_FROM_FAVORITE":
       return {
         ...state,
-        favorite: state.favorite.filter(item=>item.id !== parseFloat(action.data))
+        favorite: state.favorite.filter(item => item.id !== parseFloat(action.data))
       }
   }
 
