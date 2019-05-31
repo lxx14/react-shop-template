@@ -1,6 +1,11 @@
 .sidebar {
   display: flex;
+  flex-direction: column;
   width: 29%;
   padding: 10px;
   box-shadow: 0 0 5px 0 black;
+  img {
+    width: 100px;
+    height: 100px;
+  }
 }
