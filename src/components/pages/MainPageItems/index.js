@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import { setItemsActionType } from './actions';
 import './style.scss';
 
 class MainPageItems extends Component {
@@ -38,11 +39,11 @@ class MainPageItems extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  items: state.itemsContainer.items.filter(item=>item.name.includes(state.itemsContainer.searchString))
+  items: state.itemsContainer.items.filter(item=>item.name.toLowerCase().includes(state.itemsContainer.searchString))
 })
 
-const mapDispatchToProps = (dispatch) => ({
-  setFindString: (data) => dispatch({type: "SET_FIND_STRING", data})
-})
+const mapDispatchToProps = {
+  setFindString: setItemsActionType
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(MainPageItems);
