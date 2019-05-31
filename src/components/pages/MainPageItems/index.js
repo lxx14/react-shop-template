@@ -6,6 +6,19 @@ import './style.scss';
 class MainPageItems extends Component {
   constructor(props) {
     super(props)
+    this.state = {
+      findValue: ''
+    }
+  }
+  onChangeHandler = (e) => {
+    this.setState({
+      findValue: e.target.value
+    })
+  }
+
+  handleFind = () => {
+    console.log('click!', this.state.findValue);
+    this.props.setFindString(this.state.findValue);
   }
 
   render() {
@@ -13,8 +26,8 @@ class MainPageItems extends Component {
     return (
       <div className='page'>
         <div>
-          <input type='text' />
-          <button type='button'>Find item</button>
+          <input type='text' onChange={this.onChangeHandler} placeholder="fast example: ball"/>
+          <button type='button' onClick={this.handleFind}>Find item</button>
         </div>
         <div className='items'>
           {renderItems}
@@ -25,7 +38,11 @@ class MainPageItems extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  items: state.itemsContainer.items
+  items: state.itemsContainer.items.filter(item=>item.name.includes(state.itemsContainer.searchString))
 })
 
-export default connect(mapStateToProps)(MainPageItems);
+const mapDispatchToProps = (dispatch) => ({
+  setFindString: (data) => dispatch({type: "SET_FIND_STRING", data})
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(MainPageItems);
