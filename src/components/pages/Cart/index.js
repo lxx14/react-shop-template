@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { deleteCartActionType } from './actions';
 import './style.scss';
 
 const Cart = (props) => {
@@ -21,8 +22,8 @@ const mapStateToProps = (state) => ({
   cart: state.cartContainer.cart
 })
 
-const mapDispatchToProps = (dispatch) => ({
-  deleteCart: (data) => dispatch({ type: "DELETE_FROM_CART", data })
-})
+const mapDispatchToProps = {
+  deleteCart: deleteCartActionType
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(Cart);
