@@ -18,7 +18,6 @@ class MainPageItems extends Component {
   }
 
   handleFind = () => {
-    console.log('click!', this.state.findValue);
     this.props.setFindString(this.state.findValue);
   }
 
