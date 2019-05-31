@@ -3,6 +3,6 @@
   {"category": "Sporting Goods","price": "$9.99", "stocked":"true", "name": "Baseball",  "icon": {"src": "https://i2.rozetka.ua/goods/5060950/ivn_az_340_images_5060950936.jpg", "alt": "image"}, "id": 2},
   {"category": "Sporting Goods", "price": "$29.99",  "stocked": "false", "name": "Basketball", "icon": {"src": "https://www.proball.ru/upload/images/31848/824b3132a677689f929e48822319865d_1000_1000.jpg", "alt": "image"}, "id": 3},
   {"category": "Electronics", "price": "$99.99", "stocked": "true", "name": "iPod Touch", "icon": {"src": "https://upload.wikimedia.org/wikipedia/commons/5/51/IPod_classic.png", "alt": "image"}, "id": 4},
-  {"category": "Electronics", "price": "$399.99", "stocked": "false", "name": "iPhone 5", "icon": {"src": "https://i.allo.ua/media/catalog/product/cache/1/image/425x295/799896e5c6c37e11608b9f8e1d047d15/x/r/xr_1.jpg", "alt": "image"}, "id": 5},
-  {"category": "Electronics", "price": "$199.99", "stocked": "true", "name": "Nexus 7", "icon": {"src": "https://d2pa5gi5n2e1an.cloudfront.net/global/images/product/tablets/Google_NEXUS_7_16GB/Google_NEXUS_7_16GB_L_1.jpg", "alt": "image"}, "id": 6}
+  {"category": "Electronics", "price": "$399.99", "stocked": "false", "name": "phone-iPhone 5", "icon": {"src": "https://i.allo.ua/media/catalog/product/cache/1/image/425x295/799896e5c6c37e11608b9f8e1d047d15/x/r/xr_1.jpg", "alt": "image"}, "id": 5},
+  {"category": "Electronics", "price": "$199.99", "stocked": "true", "name": "phone-Nexus 7", "icon": {"src": "https://d2pa5gi5n2e1an.cloudfront.net/global/images/product/tablets/Google_NEXUS_7_16GB/Google_NEXUS_7_16GB_L_1.jpg", "alt": "image"}, "id": 6}
 ]

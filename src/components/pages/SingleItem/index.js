@@ -1,16 +1,23 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { addToFavoriteActionType } from './actions';
+import { addToFavoriteActionType, addToCartActionType } from './actions';
 import './style.scss';
 
 const SingleItem = (props) => {
   const { name, price, category, stocked, icon, id } = props.oneItem;
   const addToSidebar = () => {
-    if (props.favoriteItems.length>0&&props.favoriteItems.find(item => item.id === id)) {
-      alert ('already in favorite!')
+    if (props.favoriteItems.length > 0 && props.favoriteItems.find(item => item.id === id)) {
+      alert('already in favorite!')
     } else {
       props.addSide(props.oneItem);
+    }
+  }
+  const addToCart = () => {
+    if (props.cartItems.length > 0 && props.cartItems.find(item => item.id === id)) {
+      alert("already in cart!")
+    } else {
+      props.addCart(props.oneItem);
     }
   }
   return (
@@ -22,7 +29,7 @@ const SingleItem = (props) => {
       <NavLink to='/items' className='back'><i className="far fa-arrow-alt-circle-left"></i></NavLink>
       <div className='handlers'>
         <i className="fas fa-star" onClick={addToSidebar}></i>
-        <i className="fas fa-shopping-cart"></i>
+        <i className="fas fa-shopping-cart" onClick={addToCart}></i>
       </div>
     </div>
   )
@@ -34,12 +41,14 @@ const mapStateToProps = (state, ownProps) => {
   const oneItem = state.itemsContainer.items.find(item => parseFloat(singleId) === item.id);
   return {
     oneItem,
-    favoriteItems: state.sidebar.favorite
+    favoriteItems: state.sidebar.favorite,
+    cartItems: state.cartContainer.cart
   }
 }
 
 const mapDispatchToProps = {
-  addSide: addToFavoriteActionType
+  addSide: addToFavoriteActionType,
+  addCart: addToCartActionType
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(SingleItem);
