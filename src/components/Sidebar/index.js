@@ -3,12 +3,23 @@ import { connect } from 'react-redux';
 import './style.scss';
 
 const Sidebar = (props) => {
-  if (props.sideBarItems.length>0) {
-  const renderFavorite=props.sideBarItems.map(item=><div key={item.id}><img src={item.icon.src} alt={item.name} /></div>)
-  } else {
-    const renderFavorite=<p>empty now!</p>
+
+  const deleteItem = (e) => {
+    const question = confirm('delete from favorite?');
+    if (question) {
+      props.deleteFromFavorite(e.target.id)
+    }
+
   }
-  return(
+
+  if (props.sideBarItems.length > 0) {
+    const renderFavorite = props.sideBarItems.map(item => <div key={item.id}><img src={item.icon.src} id={item.id} alt={item.name} onClick={deleteItem} /></div>)
+  } else {
+    const renderFavorite = <p>empty now!</p>
+  }
+
+
+  return (
     <div className='sidebar'>
       <h1>Sidebar</h1>
       <div className='sidebar-image'></div>
@@ -20,5 +31,8 @@ const Sidebar = (props) => {
 const mapStateToProps = (state) => ({
   sideBarItems: state.sidebar.favorite
 })
+const mapDispatchToProps = (dispatch) => ({
+  deleteFromFavorite: (data) => dispatch({ type: "DELETE_FROM_FAVORITE", data })
+})
 
-export default connect(mapStateToProps)(Sidebar);
+export default connect(mapStateToProps, mapDispatchToProps)(Sidebar);
